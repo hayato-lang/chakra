@@ -1,5 +1,5 @@
+import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { memo, VFC } from "react";
 
 import { Login } from "../components/pages/Login";
 import { HomeRoutes } from "./HomeRoutes";
@@ -7,7 +7,7 @@ import { Page404 } from "../components/pages/Page404";
 import { HeaderLayout } from "../components/template/HeaderLayout";
 
 
-export const Router: VFC = memo(() => {
+export const Router = () => {
   return(
     <Switch>
       <Route  path="/">
@@ -34,4 +34,4 @@ export const Router: VFC = memo(() => {
       </Route>
     </Switch>
   );
-});
+};
