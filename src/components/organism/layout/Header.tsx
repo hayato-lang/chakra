@@ -1,16 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
+import { HamburgerIcon } from "@chakra-ui/icons";
 import { 
   Flex, 
   Heading, 
   Box, 
   Link, 
-  useDisclosure
+  useDisclosure,
+  IconButton
  } from "@chakra-ui/react";
 import { memo, VFC, useCallback } from "react";
 import { useHistory } from "react-router-dom";
-
-import { MenuIconButton } from "../../atoms/button/MenuIconButton"
 import { MenuDrawer } from "../../molcules/MenuDrawer";
 
 export const Header: VFC = memo(() => {
@@ -19,7 +19,7 @@ export const Header: VFC = memo(() => {
 
   const onClickHome = useCallback(() => history.push("/home"), []);
   const onClickSetting = useCallback(() => history.push("/home/setting"), []);
-  const onClickUserManagement = useCallback(() => history.push("/home/user-management"), []);
+  const onClickUserManagement = useCallback(() => history.push("/home/user_management"), []);
   return (
     <>
       <Flex 
@@ -55,7 +55,14 @@ export const Header: VFC = memo(() => {
           </Box>
           <Link onClick={onClickSetting}>設定</Link>
         </Flex>
-        <MenuIconButton onOpen={onOpen}/>
+        <IconButton 
+         aria-label="メニューボタン"
+         icon={<HamburgerIcon />}
+         onClick={onOpen}
+         size="sm"
+         variant="unstyled"
+         display={{ base:"block", md: "none" }}
+         />
       </Flex>
       <MenuDrawer
        onClose={onClose}

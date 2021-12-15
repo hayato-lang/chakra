@@ -1,5 +1,4 @@
 import { memo, VFC } from "react";
-import { HamburgerIcon } from "@chakra-ui/icons";
 import { IconButton } from "@chakra-ui/react";
 
 type Props = {
@@ -11,7 +10,6 @@ export const MenuIconButton: VFC<Props> = memo((props) => {
   return (
     <IconButton 
     aria-label="メニューボタン" 
-    icon={HamburgerIcon} 
     size="sm" 
     variant="unstyled" 
     display={{ base:"block", md: "none" }}
