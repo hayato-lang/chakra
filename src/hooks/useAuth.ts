@@ -12,7 +12,7 @@ export const useAuth = () => {
   const [ loading, setLoading ] = useState(false);
   const login = useCallback((id: string) => {
     setLoading(true);
-    axios.get<User>(`https://jsonplaceholder.typicode.com/users${id}`).then((res) => {
+    axios.get<User>(`https://jsonplaceholder.typicode.com/users/${id}`).then((res) => {
       if (res.data) {
         history.push("/home");
       } else {
